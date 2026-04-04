@@ -1,0 +1,219 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "kanagawa-fg": "#e9e7d8",
+    "kanagawa-bg": "#16161e",
+    "kanagawa-bg-darker": "#131314",
+    "kanagawa-purple": "#9b82e7",
+    "kanagawa-orange": "#ff8914",
+    "kanagawa-blue": "#6f93db",
+    "kanagawa-pink": "#E88EAA",
+    "kanagawa-yellow": "#e7c873",
+    "kanagawa-teal": "#8BBAAB",
+    "kanagawa-lightBlue": "#8FC4DA",
+    "kanagawa-green": "#A8CB7C",
+    "kanagawa-gray": "#828279"
+  },
+  "theme": {
+    "primary": {
+      "dark": "kanagawa-blue",
+      "light": "kanagawa-purple"
+    },
+    "secondary": {
+      "dark": "kanagawa-purple",
+      "light": "kanagawa-purple"
+    },
+    "accent": {
+      "dark": "kanagawa-orange",
+      "light": "kanagawa-orange"
+    },
+    "error": {
+      "dark": "#FF6D72",
+      "light": "#FF6D72"
+    },
+    "warning": {
+      "dark": "kanagawa-orange",
+      "light": "kanagawa-orange"
+    },
+    "success": {
+      "dark": "kanagawa-green",
+      "light": "kanagawa-green"
+    },
+    "info": {
+      "dark": "kanagawa-blue",
+      "light": "kanagawa-purple"
+    },
+    "text": {
+      "dark": "kanagawa-fg",
+      "light": "kanagawa-bg"
+    },
+    "textMuted": {
+      "dark": "kanagawa-gray",
+      "light": "kanagawa-gray"
+    },
+    "background": {
+      "dark": "kanagawa-bg",
+      "light": "#E8E2C8"
+    },
+    "backgroundPanel": {
+      "dark": "#1d1d27",
+      "light": "#D0CAB6"
+    },
+    "backgroundElement": {
+      "dark": "#2A2A37",
+      "light": "#C8C093"
+    },
+    "border": {
+      "dark": "#3f3f53",
+      "light": "#54546D"
+    },
+    "borderActive": {
+      "dark": "kanagawa-purple",
+      "light": "kanagawa-purple"
+    },
+    "borderSubtle": {
+      "dark": "#2A2A37",
+      "light": "#727169"
+    },
+    "diffAdded": {
+      "dark": "kanagawa-green",
+      "light": "kanagawa-green"
+    },
+    "diffRemoved": {
+      "dark": "#C34043",
+      "light": "#C34043"
+    },
+    "diffContext": {
+      "dark": "#363646",
+      "light": "#9CABCA"
+    },
+    "diffHunkHeader": {
+      "dark": "#363646",
+      "light": "#9CABCA"
+    },
+    "diffHighlightAdded": {
+      "dark": "kanagawa-green",
+      "light": "kanagawa-green"
+    },
+    "diffHighlightRemoved": {
+      "dark": "#C34043",
+      "light": "#C34043"
+    },
+    "diffAddedBg": {
+      "dark": "#2B3328",
+      "light": "#76946A"
+    },
+    "diffRemovedBg": {
+      "dark": "#2B2328",
+      "light": "#C34043"
+    },
+    "diffContextBg": {
+      "dark": "#1F1F28",
+      "light": "#DCD7BA"
+    },
+    "diffLineNumber": {
+      "dark": "#54546D",
+      "light": "#54546D"
+    },
+    "diffAddedLineNumberBg": {
+      "dark": "#2B3328",
+      "light": "#76946A"
+    },
+    "diffRemovedLineNumberBg": {
+      "dark": "#2B2328",
+      "light": "#C34043"
+    },
+    "markdownText": {
+      "dark": "kanagawa-fg",
+      "light": "#1F1F28"
+    },
+    "markdownHeading": {
+      "dark": "kanagawa-blue",
+      "light": "kanagawa-purple"
+    },
+    "markdownLink": {
+      "dark": "kanagawa-orange",
+      "light": "kanagawa-orange"
+    },
+    "markdownLinkText": {
+      "dark": "kanagawa-teal",
+      "light": "kanagawa-teal"
+    },
+    "markdownCode": {
+      "dark": "kanagawa-green",
+      "light": "kanagawa-green"
+    },
+    "markdownBlockQuote": {
+      "dark": "kanagawa-gray",
+      "light": "kanagawa-gray"
+    },
+    "markdownEmph": {
+      "dark": "kanagawa-pink",
+      "light": "kanagawa-pink"
+    },
+    "markdownStrong": {
+      "dark": "kanagawa-yellow",
+      "light": "kanagawa-yellow"
+    },
+    "markdownHorizontalRule": {
+      "dark": "kanagawa-gray",
+      "light": "kanagawa-gray"
+    },
+    "markdownListItem": {
+      "dark": "kanagawa-blue",
+      "light": "kanagawa-purple"
+    },
+    "markdownListEnumeration": {
+      "dark": "kanagawa-teal",
+      "light": "kanagawa-teal"
+    },
+    "markdownImage": {
+      "dark": "kanagawa-blue",
+      "light": "kanagawa-purple"
+    },
+    "markdownImageText": {
+      "dark": "kanagawa-teal",
+      "light": "kanagawa-teal"
+    },
+    "markdownCodeBlock": {
+      "dark": "kanagawa-fg",
+      "light": "#1F1F28"
+    },
+    "syntaxComment": {
+      "dark": "kanagawa-gray",
+      "light": "kanagawa-gray"
+    },
+    "syntaxKeyword": {
+      "dark": "kanagawa-purple",
+      "light": "kanagawa-purple"
+    },
+    "syntaxFunction": {
+      "dark": "kanagawa-blue",
+      "light": "kanagawa-blue"
+    },
+    "syntaxVariable": {
+      "dark": "kanagawa-fg",
+      "light": "#1F1F28"
+    },
+    "syntaxString": {
+      "dark": "kanagawa-green",
+      "light": "kanagawa-green"
+    },
+    "syntaxNumber": {
+      "dark": "kanagawa-pink",
+      "light": "kanagawa-pink"
+    },
+    "syntaxType": {
+      "dark": "kanagawa-teal",
+      "light": "kanagawa-teal"
+    },
+    "syntaxOperator": {
+      "dark": "kanagawa-yellow",
+      "light": "kanagawa-yellow"
+    },
+    "syntaxPunctuation": {
+      "dark": "kanagawa-lightBlue",
+      "light": "#1F1F28"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+    "name": "kanagawa-ww",
+    "displayName": "Kanagawa WW",
+    "description": "A customized Kanagawa theme with high contrast and vibrant colors",
+    "version": "1.0.0",
+    "publisher": "wwatkins",
+    "icon": "assets/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wwatkins/kanagawa-ww"
+    },
+    "homepage": "https://github.com/wwatkins/kanagawa-ww",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "keywords": [
+        "theme",
+        "contrast",
+        "dark",
+        "kanagawa",
+        "custom"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Kanagawa WW",
+                "uiTheme": "vs-dark",
+                "path": "./themes/kanagawa-alt-color-theme.json"
+            }
+        ]
+    }
+}
