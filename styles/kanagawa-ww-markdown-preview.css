@@ -1,0 +1,496 @@
+/* ============================================
+   Kanagawa WW - VS Code Markdown Preview CSS
+   Based on theme/kanagawa-ww.json
+   Uses highlight.js class names for syntax highlighting
+   ============================================ */
+
+/* CSS Custom Properties - Theme Colors */
+:root {
+  /* Backgrounds */
+  --kw-bg: #1d1d27;
+  --kw-bg-elevated: #2a2a37;
+  --kw-bg-panel: #16161e;
+  --kw-bg-code: #16161e;
+  --kw-bg-blockquote: #252535;
+
+  /* Text */
+  --kw-text: #e8e2c8;
+  --kw-text-muted: #727169;
+
+  /* Accents */
+  --kw-heading: #6f93db;
+  --kw-link: #6a9589;
+  --kw-code-inline: #ff8914;
+
+  /* Borders */
+  --kw-border: #32325b;
+  --kw-border-subtle: #54546d;
+
+  /* Syntax Colors */
+  --kw-syntax-comment: #727169;
+  --kw-syntax-string: #98bb6c;
+  --kw-syntax-keyword: #ae88d9;
+  --kw-syntax-function: #6f93db;
+  --kw-syntax-number: #7fb4ca;
+  --kw-syntax-type: #6db9aa;
+  --kw-syntax-operator: #d4ac61;
+  --kw-syntax-tag: #e7c873;
+  --kw-syntax-attr: #e7c873;
+  --kw-syntax-error: #ff5d62;
+  --kw-syntax-punctuation: #9cabca;
+  --kw-syntax-variable: #e8e2c8;
+
+  /* UI Colors */
+  --kw-selection: #223249;
+  --kw-scrollbar: #3f3f5366;
+  --kw-scrollbar-hover: #54546d80;
+  --kw-scrollbar-active: #6f6f9080;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--kw-bg);
+  color: var(--kw-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--kw-heading);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+h1 { font-size: 1.75em; border-bottom: 1px solid var(--kw-border); padding-bottom: 0.3em; }
+h2 { font-size: 1.5em; border-bottom: 1px solid var(--kw-border); padding-bottom: 0.3em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.875em; }
+h6 { font-size: 0.85em; color: var(--kw-text-muted); }
+
+/* Links */
+a {
+  color: var(--kw-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Paragraphs */
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* Horizontal Rule */
+hr {
+  background-color: var(--kw-border);
+  border: none;
+  height: 1px;
+  margin: 1.5em 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-top: 0.25em;
+}
+
+li > ul, li > ol {
+  margin-bottom: 0;
+}
+
+ul ul, ol ul {
+  list-style-type: circle;
+}
+
+ul ul ul, ol ul ul, ol ol ul {
+  list-style-type: square;
+}
+
+/* Task Lists */
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 1px solid var(--kw-border-subtle);
+  margin-right: 0.5em;
+  width: 1em;
+  height: 1em;
+  border-radius: 3px;
+  position: relative;
+  vertical-align: middle;
+  top: -1px;
+}
+
+.task-list-item input[type="checkbox"]:checked {
+  border-color: var(--kw-heading);
+}
+
+.task-list-item input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: -2px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--kw-heading);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Blockquotes */
+blockquote {
+  background-color: var(--kw-bg-blockquote);
+  border-left: 4px solid var(--kw-border);
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: var(--kw-text);
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* Inline Code */
+code {
+  background-color: var(--kw-bg-code);
+  border-radius: 3px;
+  color: #d27e99;
+  font-family: "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  background-color: var(--kw-bg-code);
+  border-radius: 4px;
+  margin: 1em 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+pre code {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--kw-text);
+  font-size: 0.85em;
+  line-height: 1.45;
+  padding: 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1em 0;
+  overflow: auto;
+  width: 100%;
+}
+
+table th, table td {
+  border: 1px solid var(--kw-border);
+  padding: 0.5em 1em;
+}
+
+table th {
+  background-color: var(--kw-bg-elevated);
+  color: var(--kw-heading);
+  font-weight: 600;
+}
+
+table tr:nth-child(even) {
+  background-color: rgba(42, 42, 55, 0.3);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--kw-selection);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kw-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kw-scrollbar);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--kw-scrollbar-hover);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--kw-scrollbar-active);
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--kw-border-subtle);
+  outline-offset: 2px;
+}
+
+/* Strong / Bold */
+strong, b {
+  color: var(--kw-text);
+  font-weight: 700;
+}
+
+/* Emphasis / Italic */
+em, i {
+  color: #e46876;
+  font-style: italic;
+}
+
+/* Strikethrough */
+del, s {
+  color: var(--kw-text-muted);
+}
+
+/* Keyboard Input */
+kbd {
+  background-color: var(--kw-bg-elevated);
+  border: 1px solid var(--kw-border-subtle);
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 var(--kw-border);
+  color: var(--kw-text);
+  font-family: inherit;
+  font-size: 0.85em;
+  padding: 0.2em 0.5em;
+}
+
+/* Abbreviations */
+abbr[title] {
+  border-bottom: 1px dotted var(--kw-border-subtle);
+  cursor: help;
+  text-decoration: none;
+}
+
+/* Address */
+address {
+  font-style: normal;
+}
+
+/* ============================================
+   Code Block Syntax Highlighting (highlight.js)
+   Complete coverage of all hljs-* classes
+   Colors based on kanagawa-ww.json tokenColors
+   ============================================ */
+
+/* --- Keywords (purple #ae88d9) --- */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-tag,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: var(--kw-syntax-keyword);
+}
+
+/* --- Built-ins (blue #6f93db) --- */
+.hljs-built_in {
+  color: #6f93db;
+}
+
+/* --- Types (teal #6db9aa) --- */
+.hljs-type,
+.hljs-builtin,
+.hljs-title.class_,
+.hljs-title.class_.inherited__ {
+  color: var(--kw-syntax-type);
+}
+
+/* --- Literals (pink #d27e99) --- */
+.hljs-literal,
+.hljs-variable.constant,
+.hljs-symbol {
+  color: #d27e99;
+}
+
+/* --- Numbers (pink #d27e99) --- */
+.hljs-number,
+.hljs-link {
+  color: #d27e99;
+}
+
+/* --- Strings (green #98bb6c) --- */
+.hljs-string,
+.hljs-section,
+.hljs-addition,
+.hljs-template-tag,
+.hljs-code,
+.hljs-formula {
+  color: var(--kw-syntax-string);
+}
+
+/* --- Functions / Titles (blue #6f93db) --- */
+.hljs-title,
+.hljs-title.function_,
+.hljs-title.function.invoke,
+.hljs-function {
+  color: var(--kw-syntax-function);
+}
+
+/* --- Parameters (gold #e7c873) --- */
+.hljs-params {
+  color: #e7c873;
+}
+
+/* --- Attributes (gold #e7c873) --- */
+.hljs-attr,
+.hljs-attribute,
+.hljs-property {
+  color: var(--kw-syntax-attr);
+}
+
+/* --- Tags (gold #e7c873) --- */
+.hljs-tag .hljs-name,
+.hljs-tag {
+  color: var(--kw-syntax-tag);
+}
+
+.hljs-tag .hljs-attr {
+  color: var(--kw-syntax-attr);
+}
+
+/* --- Variables (text #e8e2c8) --- */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-subst {
+  color: var(--kw-syntax-variable);
+}
+
+/* --- Language variables - this, super, self (red #ff5d62) --- */
+.hljs-variable.language {
+  color: var(--kw-syntax-error);
+}
+
+/* --- Comments (gray #727169) --- */
+.hljs-comment,
+.hljs-quote,
+.hljs-doctag,
+.hljs-meta,
+.hljs-meta.prompt {
+  color: var(--kw-syntax-comment);
+  font-style: italic;
+}
+
+/* --- Punctuation (pale blue #9cabca) --- */
+.hljs-punctuation,
+.hljs-selector-punctuation {
+  color: var(--kw-syntax-punctuation);
+}
+
+/* --- Operators (gold #d4ac61) --- */
+.hljs-operator,
+.hljs-union,
+.hljs-expression {
+  color: var(--kw-syntax-operator);
+}
+
+/* --- Bullet (pink #d27e99) --- */
+.hljs-bullet {
+  color: #d27e99;
+}
+
+/* --- Regex (pink #d27e99) --- */
+.hljs-regexp {
+  color: #d27e99;
+}
+
+/* --- Constants (pink #d27e99) --- */
+.hljs-constant {
+  color: #d27e99;
+}
+
+/* --- Meta keywords (purple #ae88d9) --- */
+.hljs-meta.keyword {
+  color: var(--kw-syntax-keyword);
+}
+
+/* --- Meta strings (green #98bb6c) --- */
+.hljs-meta.string {
+  color: var(--kw-syntax-string);
+}
+
+/* --- Escape characters (pink #d27e99) --- */
+.hljs-char.escape {
+  color: #d27e99;
+}
+
+/* --- Emphasis / Strong --- */
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+/* --- Deleted (red) --- */
+.hljs-deletion {
+  color: #c34043;
+  background-color: rgba(195, 64, 67, 0.15);
+}
+
+/* --- Added (green) --- */
+.hljs-addition {
+  color: #76946a;
+  background-color: rgba(118, 148, 106, 0.15);
+}
+
+/* --- Template variables (gold #e7c873) --- */
+.hljs-template-variable {
+  color: var(--kw-syntax-attr);
+}
+
+/* --- Class title (teal #6db9aa) --- */
+.hljs-class .hljs-title {
+  color: var(--kw-syntax-type);
+}
+
+/* --- Module keyword (purple #ae88d9) --- */
+.hljs-keyword.module,
+.hljs-meta.module {
+  color: var(--kw-syntax-keyword);
+}
+
+/* --- Import/export (gold #e7c873) --- */
+.hljs-meta.import,
+.hljs-meta.export {
+  color: #ffa066;
+}

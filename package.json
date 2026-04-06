@@ -30,6 +30,9 @@
                 "uiTheme": "vs-dark",
                 "path": "./themes/kanagawa-alt-color-theme.json"
             }
+        ],
+        "markdown.previewStyles": [
+            "./styles/kanagawa-ww-markdown-preview.css"
         ]
     }
 }
