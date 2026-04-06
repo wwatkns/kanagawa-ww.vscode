@@ -18,13 +18,16 @@
   --kw-text-muted: #727169;
 
   /* Accents */
-  --kw-heading: #6f93db;
-  --kw-link: #6a9589;
+  /* --kw-heading: #6f93db; */
+  /* --kw-link: #6a9589; */
+  --kw-heading: #7fb4ca;
+  --kw-link: #6a97aa;
   --kw-code-inline: #ff8914;
 
   /* Borders */
   --kw-border: #32325b;
   --kw-border-subtle: #54546d;
+  --kw-border-2: #424253;
 
   /* Syntax Colors */
   --kw-syntax-comment: #727169;
@@ -63,8 +66,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-h1 { font-size: 1.75em; border-bottom: 1px solid var(--kw-border); padding-bottom: 0.3em; }
-h2 { font-size: 1.5em; border-bottom: 1px solid var(--kw-border); padding-bottom: 0.3em; }
+h1 { font-size: 1.75em; border-bottom: 1px solid var(--kw-border-2); padding-bottom: 0.3em; }
+h2 { font-size: 1.5em; border-bottom: 1px solid var(--kw-border-2); padding-bottom: 0.3em; }
 h3 { font-size: 1.25em; }
 h4 { font-size: 1em; }
 h5 { font-size: 0.875em; }
@@ -88,7 +91,7 @@ p {
 
 /* Horizontal Rule */
 hr {
-  background-color: var(--kw-border);
+  background-color: var(--kw-border-2);
   border: none;
   height: 1px;
   margin: 1.5em 0;
@@ -171,9 +174,11 @@ blockquote > :last-child {
 
 /* Inline Code */
 code {
-  background-color: var(--kw-bg-code);
+  background-color: var(--kw-bg-blockquote);
   border-radius: 3px;
-  color: #d27e99;
+  color: #98BB6C;
+  /* color: #7FB4CA; */
+  /* color: #DCA561; */
   font-family: "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.9em;
   padding: 0.2em 0.4em;
