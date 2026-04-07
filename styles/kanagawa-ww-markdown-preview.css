@@ -275,7 +275,7 @@ strong, b {
 
 /* Emphasis / Italic */
 em, i {
-  color: #e46876;
+  color: var(--kw-text);
   font-style: italic;
 }
 
@@ -498,4 +498,287 @@ address {
 .hljs-meta.import,
 .hljs-meta.export {
   color: #ffa066;
+}
+
+/* ============================================
+   Mermaid Diagram Styling
+   ============================================ */
+
+/* Base container - sets background and text color */
+.mermaid {
+  background-color: var(--kw-bg);
+  color: var(--kw-text);
+  filter: none !important;
+}
+
+/* SVG container - removes default shadows and backgrounds */
+.mermaid svg {
+  filter: none !important;
+  background: transparent !important;
+}
+
+/* All SVG elements - remove shadows */
+.mermaid svg * {
+  filter: none !important;
+  box-shadow: none !important;
+  /* fill: var(--kw-text); */
+}
+
+.mermaid marker {
+  filter: none !important;
+  box-shadow: none !important;
+  /* fill: var(--kw-bg-code) !important; */
+  fill: #C34043 !important;
+}
+
+/* SVG groups - remove shadows */
+.mermaid svg g {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* SVG group children - remove shadows */
+.mermaid svg g * {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* ForeignObject elements - used for HTML in diagrams */
+.mermaid foreignObject {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.mermaid foreignObject * {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Flowchart note boxes */
+.mermaid svg g[aria-label*="note"] rect,
+.mermaid .note rect {
+  fill: var(--kw-bg-elevated) !important;
+  stroke: var(--kw-heading) !important;
+  stroke-width: 2px !important;
+  stroke-dasharray: none !important;
+}
+
+/* Flowchart note groups */
+.mermaid .note-group rect,
+.mermaid .note-group-bottom rect,
+.mermaid .noteGroup rect {
+  fill: var(--kw-bg-elevated) !important;
+  stroke: var(--kw-heading) !important;
+  stroke-width: 2px !important;
+}
+
+/* Sequence diagram notes (note over actors) */
+.mermaid .noteText,
+.mermaid .note-text,
+.mermaid [class*="noteText"],
+.mermaid .actor-note rect,
+.mermaid .actor-note polygon {
+  fill: var(--kw-bg-blockquote) !important;
+  stroke: var(--kw-heading) !important;
+  stroke-width: 2px !important;
+}
+
+/* Sequence diagram note text */
+.mermaid .noteText text,
+.mermaid .note-text text,
+.mermaid [class*="noteText"] text {
+  fill: var(--kw-text) !important;
+}
+
+/* Sequence diagram activation boxes (activate/deactivate) */
+.mermaid .activation,
+.mermaid [class*="activation"],
+.mermaid rect[class*="activation"] {
+  fill: #8bb855 !important;
+  stroke: #d4f1af !important;
+  stroke-width: 1px !important;
+}
+
+/* Remove inline filter styles */
+.mermaid [style*="filter"],
+.mermaid [style*="filter"] * {
+  filter: none !important;
+}
+
+/* Remove inline drop-shadow styles */
+.mermaid [style*="drop-shadow"],
+.mermaid [style*="drop-shadow"] * {
+  filter: none !important;
+}
+
+/* Node text elements */
+.mermaid .node text,
+.mermaid .label text,
+.mermaid .edgeLabel text,
+.mermaid .node .label text {
+  filter: none !important;
+}
+
+/* All elements with class - remove shadows */
+.mermaid [class] {
+  filter: none !important;
+}
+
+/* Universal - remove all shadows */
+.mermaid * {
+  filter: none !important;
+}
+
+/* Flowchart node shapes */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.mermaid .node rect,
+.mermaid .node .label-container rect {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.mermaid rect.basic.label-container {
+  filter: none !important;
+  box-shadow: none !important;
+  fill: #262645 !important;
+  stroke: #38386e !important;
+  stroke-width: 1px !important;
+}
+
+/* General rect elements (covers sequence diagram note boxes) */
+.mermaid g rect.note {
+  filter: none !important;
+  box-shadow: none !important;
+  fill: #3b578e !important;
+  stroke: #6f93db !important;
+  stroke-width: 1px !important;
+}
+
+/* Text inside rects */
+.mermaid g text,
+.mermaid g text tspan {
+  fill: var(--kw-text) !important;
+}
+
+/* Elements with aria-label */
+.mermaid [aria-label] rect {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Divs inside mermaid */
+.mermaid div {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Edge labels */
+.mermaid .node rect,
+.mermaid .edgeLabel,
+.mermaid .label {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Foreign objects in nodes */
+.mermaid .node foreignObject {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Actor elements in sequence diagrams */
+.mermaid .actor rect,
+.mermaid .actor-box rect {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Flowchart node styling */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon,
+.mermaid .node .label-container {
+  fill: var(--kw-bg-elevated) !important;
+  stroke: var(--kw-border-subtle) !important;
+}
+
+/* Node labels */
+.mermaid .node .label {
+  color: var(--kw-text) !important;
+  fill: var(--kw-text) !important;
+}
+
+.mermaid .edgeLabel {
+  color: var(--kw-syntax-punctuation) !important;
+}
+
+.mermaid .edgeLabel p {
+  background-color: var(--kw-bg-elevated) !important;
+}
+
+.mermaid .edgePath .path {
+  stroke: var(--kw-border) !important;
+  stroke-width: 2px;
+}
+
+.mermaid .marker {
+  fill: var(--kw-border-subtle) !important;
+  stroke: var(--kw-border-subtle) !important;
+}
+
+.mermaid .cluster rect {
+  fill: var(--kw-bg-blockquote) !important;
+  stroke: var(--kw-border) !important;
+}
+
+.mermaid .cluster span {
+  color: var(--kw-heading) !important;
+}
+
+.mermaid .actor {
+  /* fill: var(--kw-bg-elevated) !important;
+  stroke: var(--kw-border-subtle) !important; */
+  fill: #262645 !important;
+  stroke: #38386e !important;
+}
+
+.mermaid .actor-line {
+  stroke: var(--kw-border) !important;
+}
+
+.mermaid text {
+  fill: var(--kw-text) !important;
+}
+
+.mermaid .title-text {
+  fill: var(--kw-heading) !important;
+  font-weight: 600;
+}
+
+.mermaid .note rect,
+.mermaid .note text {
+  fill: var(--kw-bg-blockquote) !important;
+  stroke: var(--kw-syntax-keyword) !important;
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+.mermaid .loopLine {
+  stroke: var(--kw-border-subtle) !important;
+}
+
+.mermaid .critical rect {
+  fill: rgba(255, 93, 98, 0.15) !important;
+  stroke: var(--kw-syntax-error) !important;
+}
+
+.mermaid .highlight rect {
+  background-color: rgba(127, 188, 202, 0.15) !important;
+  stroke: var(--kw-syntax-number) !important;
 }
